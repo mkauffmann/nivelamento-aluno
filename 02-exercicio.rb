@@ -9,6 +9,10 @@
 horasAno = 24 * 365
 minutosAno = horasAno * 60
 segundosAno = minutosAno * 60
+idade = 29
+desafio = 1232000000.0
+expectativaVida = 80
+chocolatesAno = 200
 
 puts "Quantas horas há em um ano?"
 puts "R: " + horasAno.to_s + " horas"
@@ -17,10 +21,10 @@ puts "Quantos minutos há em uma década?"
 puts "R: " + (minutosAno * 10).to_s + " minutos"
 puts ""
 puts "Qual é a sua idade em segundos?"
-puts "R: " + (segundosAno * 29).to_s + " segundos"
+puts "R: " + (segundosAno * idade).to_s + " segundos"
 puts ""
 puts "Quantos chocolates você pretende comer na vida?"
-puts "R: " + (365 * 80).to_s + " chocolates"
+puts "R: " + (chocolatesAno * expectativaVida).to_s + " chocolates"
 puts ""
 puts "Se minha idade é de 1232 milhões de segundos, qual é minha idade em anos?"
-puts "R: " + (1232000000 / segundosAno).to_s + " anos"
+puts "R: " + (desafio / segundosAno).to_s + " anos"
