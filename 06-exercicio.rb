@@ -15,15 +15,15 @@
 
 def fase_pandemica(vacinacao, transmissao, ocupacaoLeitos)
     # taxa de vacinação deve ser um número entre 0.0 e 1.0 (1.0 = 100%)
-    if vacinacao.class != Float || vacinacao < 0 || vacinacao > 1
+    if  vacinacao < 0 || vacinacao > 1
         return "Dados inválidos de vacinação"
 
     # fator de transmissão dever ser um número maior ou igual a zero
-    elsif transmissao.class != Float || transmissao < 0
+    elsif  transmissao < 0
         return "Dados inválidos de taxa de transmissão"
 
     # taxa de ocupação de leitos deve ser um número entre 0.0 e 1.0 (1.0 = 100%)
-    elsif ocupacaoLeitos.class != Float || ocupacaoLeitos < 0 || ocupacaoLeitos > 1
+    elsif  ocupacaoLeitos < 0 || ocupacaoLeitos > 1
         return "Dados inválidos de ocupação de leitos"
 
     else
@@ -61,14 +61,27 @@ end
 
 # (vacinacao, transmissao, ocupacaoLeitos)
 
-puts fase_pandemica(0.81, 0.7, 0.5) #azul
-puts fase_pandemica(0.1, 0.9, 0.3) #verde 
-puts fase_pandemica(0.1, 0.7, 0.5) #verde 
-puts fase_pandemica(0.5, 0.7, 0.51) #amarela
-puts fase_pandemica(0.7, 0.7, 0.66) #laranja
-puts fase_pandemica(0.7, 1.2, 0.6) #vermelha
-puts fase_pandemica(0.7, 0.9, 0.9) #vermelha
-puts fase_pandemica(0.1, 0.7, 0.91) #roxa
-puts fase_pandemica(0.81, -6.0, 0.5) #erro
-puts fase_pandemica("a", 0.7, 0.5) #erro
-puts fase_pandemica(0.8, 0.7, 5) #erro
+# puts fase_pandemica(0.81, 0.7, 0.5) #azul
+# puts fase_pandemica(0.1, 0.9, 0.3) #verde 
+# puts fase_pandemica(0.1, 0.7, 0.5) #verde 
+# puts fase_pandemica(0.5, 0.7, 0.51) #amarela
+# puts fase_pandemica(0.7, 0.7, 0.66) #laranja
+# puts fase_pandemica(0.7, 1.2, 0.6) #vermelha
+# puts fase_pandemica(0.7, 0.9, 0.9) #vermelha
+# puts fase_pandemica(0.1, 0.7, 0.91) #roxa
+# puts fase_pandemica(0.81, -6.0, 0.5) #erro
+# puts fase_pandemica("a", 0.7, 0.5) #erro
+# puts fase_pandemica(0.8, 0.7, 5) #erro
+
+puts fase_pandemica(0.1, 0.7, 0.5)   # VERDE
+puts fase_pandemica(1.0, 1, 0.9)     # AZUL
+puts fase_pandemica(0.1, 1.5, 0.5)   # VERMELHA
+puts fase_pandemica(0.1, 0.9, 0.95)  # ROXA
+puts fase_pandemica(0.1, 0.9, 0.70)  # LARANJA
+puts fase_pandemica(0.1, 0.8, 0.55)  # AMARELA
+
+puts fase_pandemica(-1, 0.7, 0.5)    # deve invalidar Taxa de Vacinacao
+puts fase_pandemica(1.1, 0.7, 0.5)   # deve invalidar Taxa de Vacinacao
+puts fase_pandemica(0.1, -2, 0.5)    # deve invalidar Fator de Transmissao
+puts fase_pandemica(0.1, 0.9, -1)    # deve invalidar Taxa de Ocupacao de Leitos
+puts fase_pandemica(0.1, 0.9, 1.2)   # deve invalidar Taxa de Ocupacao de Leitos
