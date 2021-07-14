@@ -20,22 +20,22 @@ puts "(" + numero.to_s + ")"
 
 chute = gets.chomp
 
-if chute.to_f != 0
-    if chute.to_f >= 0 && chute.to_f <= 100
+if chute.to_i != 0 && !chute.include?(".")
+    if chute.to_i >= 0 && chute.to_i <= 100
         #chute válido
-        chute = chute.to_f
+        chute = chute.to_i
         adivinhaNumero(numero, chute) 
     else
         puts "Chute inválido! (fora do intervalo entre 0 e 100)"
     end
 else
-    if chute == 0.to_s || chute == 0.0.to_s
+    if chute == 0.to_s 
         #usuário chutou 0, chute válido
-        chute = chute.to_f
+        chute = chute.to_i
         adivinhaNumero(numero, chute)
     else
-        #usuario chutou algo que função to_f converteu para 0
-        puts "Chute inválido! (não é número)"
+        #usuario chutou algo que função to_i converteu para 0
+        puts "Chute inválido! (não é número inteiro)"
     end
 end
 
