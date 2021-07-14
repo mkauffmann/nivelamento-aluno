@@ -29,7 +29,7 @@ if chute.to_i != 0 && !chute.include?(".")
         puts "Chute inválido! (fora do intervalo entre 0 e 100)"
     end
 else
-    if chute == 0.to_s 
+    if chute == 0.to_s || chute.include?("0")
         #usuário chutou 0, chute válido
         chute = chute.to_i
         adivinhaNumero(numero, chute)
