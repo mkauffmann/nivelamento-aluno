@@ -56,3 +56,9 @@ puts "MMC " + n1.to_s + ", " + n2.to_s + " = " + calculaMMC(n1, n2).to_s
 # puts encontraProximoPrimo(40)
 # puts encontraProximoPrimo(50)
 # puts encontraProximoPrimo(60)
+
+# teste = 2
+# while teste < 100
+#     puts teste
+#     teste = encontraProximoPrimo(teste)
+# end
