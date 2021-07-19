@@ -59,6 +59,6 @@ puts
 #teste 5
 array_teste = [ "A", "B", "C", "D", "E", "F", "G" ]
 exibe_array(array_teste)
-puts insere_no_array(array_teste, "Z", 0) #false
+puts insere_no_array(array_teste, "Z", 0) #true
 exibe_array(array_teste)
 puts
