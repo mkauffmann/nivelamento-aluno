@@ -23,12 +23,18 @@ def obter_apostas(qtd, limite_inicio, limite_fim)
     apostas = []
     n = 0
 
+    puts "Bem-vindo ao programa de apostas!"
+    puts "Escolha números inteiros entre " + limite_inicio.to_s + " e " + limite_fim.to_s
+    puts
     while n < qtd
         print "Digite o "+ (n + 1).to_s + "º número: "
         aposta = gets.chomp 
 
-        if aposta.to_i < limite_inicio || aposta.to_i > limite_fim
+        if aposta.to_i == 0 && aposta != "0"
             puts "Aposta inválida! Tente novamente"
+
+        elsif aposta.to_i < limite_inicio || aposta.to_i > limite_fim
+            puts "Aposta fora dos limites! Tente novamente"
         
         elsif encontrar_no_array(apostas, aposta.to_i) != -1
             puts "Aposta repetida! Tente novamente"
