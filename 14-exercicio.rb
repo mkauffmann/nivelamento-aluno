@@ -20,7 +20,25 @@ def sortear_numeros(qtd, limite_inicio, limite_fim)
     return numeros
 end
 def obter_apostas(qtd, limite_inicio, limite_fim)
-    return sortear_numeros(qtd, limite_inicio, limite_fim)
+    apostas = []
+    n = 0
+
+    while n < qtd
+        print "Digite o "+ (n + 1).to_s + "º número: "
+        aposta = gets.chomp 
+
+        if aposta.to_i < limite_inicio || aposta.to_i > limite_fim
+            puts "Aposta inválida! Tente novamente"
+        
+        elsif encontrar_no_array(apostas, aposta.to_i) != -1
+            puts "Aposta repetida! Tente novamente"
+        
+        else
+            apostas[n] = aposta.to_i
+            n = n + 1
+        end
+    end
+    return apostas
 end
 def verificar_acertos(sorteados, apostados)
     acertos = 0
